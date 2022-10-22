@@ -4,7 +4,11 @@
 
 #include "Caffe_latte.h"
 
-Caffe_latte::Caffe_latte() = default;
+Caffe_latte::Caffe_latte() {
+    cream = 0;
+    lapte = 0;
+    zahar = 0;
+}
 
 Caffe_latte::Caffe_latte(const std::string &denumire, double pret, Data &expirare, Data &fabricatie, double cream, double lapte, double zahar) : Produs(denumire, pret, expirare, fabricatie), cream(cream), lapte(lapte), zahar(zahar) {}
 

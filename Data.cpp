@@ -4,15 +4,15 @@
 
 #include "Data.h"
 
-Data::Data() = default;
+Data::Data() {
+    zi = 0;
+    luna = 0;
+    an = 0;
+}
 
 Data::Data(int zi, int luna, int an) : zi(zi), luna(luna), an(an) {}
 
-Data::Data(const Data &other) {
-    zi = other.zi;
-    luna = other.luna;
-    an = other.an;
-}
+Data::Data(const Data &other) : zi(other.zi), luna(other.luna), an(other.an) {}
 
 Data &Data::operator=(const Data &other) {
     zi = other.zi;

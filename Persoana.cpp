@@ -4,16 +4,13 @@
 
 #include "Persoana.h"
 
-Persoana::Persoana() = default;
+Persoana::Persoana() {
+    varsta = 0;
+};
 
 Persoana::Persoana(const std::string &nume, const std::string &prenume, const std::string &oras, int varsta) : nume(nume), prenume(prenume), oras(oras), varsta(varsta) {}
 
-Persoana::Persoana(const Persoana &other) {
-    nume = other.nume;
-    prenume = other.prenume;
-    oras = other.oras;
-    varsta = other.varsta;
-}
+Persoana::Persoana(const Persoana &other) : nume(other.nume), prenume(other.prenume), oras(other.oras), varsta(other.varsta) {}
 
 Persoana& Persoana::operator=(const Persoana &other) {
     nume = other.nume;

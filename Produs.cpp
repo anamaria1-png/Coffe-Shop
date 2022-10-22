@@ -4,14 +4,13 @@
 
 #include "Produs.h"
 
-Produs::Produs() : expirare(*new Data()), fabricatie(*new Data()) {}
+Produs::Produs() : expirare(*new Data()), fabricatie(*new Data()) {
+    pret = 0;
+}
 
 Produs::Produs(const std::string &denumire, double pret, Data &expirare, Data &fabricatie) : denumire(denumire), pret(pret), expirare(expirare), fabricatie(fabricatie) {}
 
-Produs::Produs(const Produs &other) : expirare(other.expirare), fabricatie(other.fabricatie) {
-    denumire = other.denumire;
-    pret = other.pret;
-}
+Produs::Produs(const Produs &other) : denumire(other.denumire), pret(other.pret), expirare(other.expirare), fabricatie(other.fabricatie) {}
 
 Produs &Produs::operator=(const Produs &other) {
     denumire = other.denumire;

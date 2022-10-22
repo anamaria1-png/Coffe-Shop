@@ -4,7 +4,11 @@
 
 #include "Irish_coffee.h"
 
-Irish_coffee::Irish_coffee() = default;
+Irish_coffee::Irish_coffee() {
+    whiskey = 0;
+    cream = 0;
+    zahar = 0;
+}
 
 Irish_coffee::Irish_coffee(const std::string &denumire, double pret, Data &expirare, Data &fabricatie, double whiskey, double cream, double zahar) : Produs(denumire, pret, expirare, fabricatie), whiskey(whiskey), cream(cream), zahar(zahar) {}
 
