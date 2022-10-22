@@ -15,7 +15,7 @@ protected:
     int varsta;
 public:
     Persoana();
-    Persoana(const std::string &nume, const std::string &prenume, const std::string &oras, int varsta);
+    Persoana(std::string nume, std::string prenume, std::string oras, int varsta);
     Persoana(const Persoana &other);
     Persoana& operator=(const Persoana &other);
     friend std::ostream &operator<<(std::ostream &os, const Persoana &persoana);

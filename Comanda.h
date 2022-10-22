@@ -20,7 +20,7 @@ private:
     Angajat& angajat;
 public:
     Comanda();
-    Comanda(const std::vector<Produs> &produse, Data &data, Client &client, Angajat &angajat);
+    Comanda(std::vector<Produs> produse, Data &data, Client &client, Angajat &angajat);
     Comanda(const Comanda& other);
     Comanda& operator=(const Comanda &other);
     friend std::ostream &operator<<(std::ostream &os, const Comanda &comanda);

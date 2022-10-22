@@ -4,9 +4,11 @@
 
 #include "Comanda.h"
 
+#include <utility>
+
 Comanda::Comanda() : data(*new Data), client(*new Client), angajat(*new Angajat) {}
 
-Comanda::Comanda(const std::vector<Produs> &produse, Data &data, Client &client, Angajat &angajat) : produse(produse), data(data), client(client), angajat(angajat) {}
+Comanda::Comanda(std::vector<Produs> produse, Data &data, Client &client, Angajat &angajat) : produse(std::move(produse)), data(data), client(client), angajat(angajat) {}
 
 Comanda::Comanda(const Comanda &other) = default;
 
@@ -20,9 +22,8 @@ Comanda &Comanda::operator=(const Comanda &other) {
 
 std::ostream &operator<<(std::ostream &os, const Comanda &comanda) {
     os << "produse: ";
-    for(auto &it : comanda.produse) {
+    for (const auto &it: comanda.produse)
         os << it << " ";
-    }
     os << "data: " << comanda.data << " client: " << comanda.client << " angajat: " << comanda.angajat;
     return os;
 }

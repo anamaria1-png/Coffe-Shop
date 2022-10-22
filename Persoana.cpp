@@ -4,11 +4,13 @@
 
 #include "Persoana.h"
 
+#include <utility>
+
 Persoana::Persoana() {
     varsta = 0;
 }
 
-Persoana::Persoana(const std::string &nume, const std::string &prenume, const std::string &oras, int varsta) : nume(nume), prenume(prenume), oras(oras), varsta(varsta) {}
+Persoana::Persoana(std::string nume, std::string prenume, std::string oras, int varsta) : nume(std::move(nume)), prenume(std::move(prenume)), oras(std::move(oras)), varsta(varsta) {}
 
 Persoana::Persoana(const Persoana &other) = default;
 

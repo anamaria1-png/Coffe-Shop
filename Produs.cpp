@@ -4,11 +4,13 @@
 
 #include "Produs.h"
 
+#include <utility>
+
 Produs::Produs() : expirare(*new Data()), fabricatie(*new Data()) {
     pret = 0;
 }
 
-Produs::Produs(const std::string &denumire, double pret, Data &expirare, Data &fabricatie) : denumire(denumire), pret(pret), expirare(expirare), fabricatie(fabricatie) {}
+Produs::Produs(std::string denumire, double pret, Data &expirare, Data &fabricatie) : denumire(std::move(denumire)), pret(pret), expirare(expirare), fabricatie(fabricatie) {}
 
 Produs::Produs(const Produs &other) = default;
 

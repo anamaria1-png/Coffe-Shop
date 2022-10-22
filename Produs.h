@@ -16,7 +16,7 @@ protected:
     Data& fabricatie;
 public:
     Produs();
-    Produs(const std::string &denumire, double pret, Data &expirare, Data &fabricatie);
+    Produs(std::string denumire, double pret, Data &expirare, Data &fabricatie);
     Produs(const Produs &other);
     Produs& operator=(const Produs &other);
     double getPret() const;

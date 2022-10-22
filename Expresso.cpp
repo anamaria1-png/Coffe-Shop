@@ -4,9 +4,11 @@
 
 #include "Expresso.h"
 
+#include <utility>
+
 Expresso::Expresso() = default;
 
-Expresso::Expresso(const std::string &denumire, double pret, Data &expirare, Data &fabricatie, const std::string &aroma) : Produs(denumire, pret, expirare, fabricatie), aroma(aroma) {}
+Expresso::Expresso(const std::string &denumire, double pret, Data &expirare, Data &fabricatie, std::string aroma) : Produs(denumire, pret, expirare, fabricatie), aroma(std::move(aroma)) {}
 
 Expresso::Expresso(const Expresso &other) = default;
 

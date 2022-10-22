@@ -13,7 +13,7 @@ class Expresso: public Produs {
 public:
     Expresso();
 
-    Expresso(const std::string &denumire, double pret, Data &expirare, Data &fabricatie, const std::string &aroma);
+    Expresso(const std::string &denumire, double pret, Data &expirare, Data &fabricatie, std::string aroma);
 
     Expresso(const Expresso &other);
     Expresso& operator =(const Expresso &other);
