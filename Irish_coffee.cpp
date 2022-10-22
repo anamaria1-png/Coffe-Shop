@@ -16,7 +16,6 @@ Irish_coffee::Irish_coffee(Irish_coffee &other) : Produs(other) {
     whiskey = other.whiskey;
     cream = other.cream;
     zahar = other.zahar;
-
 }
 
 Irish_coffee &Irish_coffee::operator=(const Irish_coffee &other) {

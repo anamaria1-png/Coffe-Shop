@@ -8,7 +8,7 @@ Expresso::Expresso() = default;
 
 Expresso::Expresso(const std::string &denumire, double pret, Data &expirare, Data &fabricatie, const std::string &aroma) : Produs(denumire, pret, expirare, fabricatie), aroma(aroma) {}
 
-Expresso::Expresso(const Expresso &other) : Produs(other), aroma(other.aroma) {}
+Expresso::Expresso(const Expresso &other) = default;
 
 Expresso &Expresso::operator=(const Expresso &other) {
     aroma = other.aroma;
