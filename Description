@@ -1,0 +1,4 @@
+Proiectul meu, intitulat "Coffe Shop", isi propune sa imite modelul unui magazin de cafea din universul real si cotidian al secolului 21. Astfel, acesta cuprinde 3 clase principale: Persoana, Produs si Comanda.
+Din  clasa Persoana vom obtine, prin intermediul procesului de mostenire, doua clase derivata, Client si Angajat, cu atributele necesare, imitand identitate unor persoane obisnuite (nume, prenume, oras, etc.)
+Clasa Comanda nu are alte clase derivate. Clasa Produs va avea 3 clase derivate, echivalente celor trei mari specialitati de cafea produse in magazin, si anume Irish Coffe, Caffee Late si Expresso.
+Unele clase detin compuneri si metode (functii), ce imita procedeele tipice unui magazin de cafea ( de exemplu obtinerea unui discount pentru persoanele in varsta,  reduceri pentru produseleaflate aproape de data de expirare.
