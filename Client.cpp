@@ -5,10 +5,7 @@
 #include "Client.h"
 
 
-Client::Client() {
-    baniCheltuiti = 0;
-    nrProduseCumparate = 0;
-}
+Client::Client()=default;
 
 Client::Client(const std::string &nume, const std::string &prenume, const std::string &oras, int varsta, int nrProduseCumparate, int baniCheltuiti) : Persoana(nume, prenume, oras, varsta), nrProduseCumparate(nrProduseCumparate), baniCheltuiti(baniCheltuiti) {}
 

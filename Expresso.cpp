@@ -22,7 +22,7 @@ Expresso &Expresso::operator=(const Expresso &other) {
 }
 
 std::ostream &operator<<(std::ostream &os, const Expresso &expresso) {
-    os << static_cast<const Produs &>(expresso) << " aroma: " << expresso.aroma;
+    os << static_cast<const Produs &>((const Produs &) expresso) << " aroma: " << expresso.aroma;
     return os;
 }
 

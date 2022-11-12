@@ -12,6 +12,8 @@
 class Client : public Persoana {
     int nrProduseCumparate;
     int baniCheltuiti;
+    int id;
+    static int next_id;
 public:
     Client();
     Client(const std::string &nume, const std::string &prenume, const std::string &oras, int varsta, int nrProduseCumparate, int baniCheltuiti);

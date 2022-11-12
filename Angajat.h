@@ -14,6 +14,8 @@ private:
     bool lucreazaInWeekend;
     bool lucreazaPartTime;
     int oraStartProgram;
+    int nr_angajat;
+    static int next_nr_angajat;
 public:
     Angajat();// reda un obiect gol
     Angajat(const std::string &nume, const std::string &prenume, const std::string &oras, int varsta, double salariu, bool lucreazaInWeekend, bool lucreazaPartTime, int oraStartProgram);

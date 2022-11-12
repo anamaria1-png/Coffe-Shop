@@ -12,11 +12,10 @@ class Expresso: public Produs {
     std::string aroma;
 public:
     Expresso();
-
     Expresso(const std::string &denumire, double pret, Data &expirare, Data &fabricatie, std::string aroma);
-
     Expresso(const Expresso &other);
     Expresso& operator =(const Expresso &other);
+    void incalzeste() override {};
     friend std:: ostream & operator<<(std::ostream &os, const Expresso & expresso);
     ~Expresso() override;
 };

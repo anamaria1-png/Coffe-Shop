@@ -8,6 +8,7 @@
 #include "Caffe_latte.h"
 #include "Produs.h"
 #include<vector>
+#include<memory>
 
 
 int main() {
@@ -21,13 +22,15 @@ int main() {
     Angajat a("Ana","Maria","Brasov",21,1500,true,false,8);
     Data an(3,5,2022);
     Client ca("Sam","Jack","Craiova",40,5,50);
-    std:: vector<Produs>produse;
-    produse.push_back(irish);
-    produse.push_back(cl);
-    produse.push_back(expresso);
+    std:: vector<Produs*>produse;
+    //std:: vector<std::shared_ptr <Produs >> produ;
+    produse.push_back(new Irish_coffee(irish));
+    //produ.push_back(std::make_shared<Caffe_latte>(cl));
+    //produse.push_back(new Expresso(expresso));
     Comanda comanda(produse,an,ca,a);
     std::cout << irish.stareProdus(an) << '\n';
     std::cout << client.pretProdus(irish, an) << '\n';
     std::cout << an.diferentaData(f) << '\n';
+    for (auto &produs : produse) {delete produs;}
     return 0;
 }
