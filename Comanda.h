@@ -22,7 +22,7 @@ private:
     Data data;
     Client client;
     Angajat angajat;
-    bool ANULATA, INTARZIATA;
+    int ANULATA, INTARZIATA;
     char stareComanda;
 public:
     Comanda();
