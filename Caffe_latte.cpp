@@ -6,8 +6,8 @@
 
 Caffe_latte::Caffe_latte()=default;
 
-Caffe_latte::Caffe_latte(const std::string &denumire, double pret, Data &expirare, Data &fabricatie, double cream,
-                         double lapte, double zahar) : Produs(denumire, pret, expirare, fabricatie), cream(cream),
+Caffe_latte::Caffe_latte(const std::string &denumire, double pret, Data &expirare, Data &fabricatie, int temperatura, double cream,
+                         double lapte, double zahar) : Produs(denumire, pret, expirare, fabricatie, temperatura), cream(cream),
                                                        lapte(lapte), zahar(zahar) {}
 
 Caffe_latte::Caffe_latte(const Caffe_latte &other): Produs(other) {
@@ -19,6 +19,11 @@ Caffe_latte::Caffe_latte(const Caffe_latte &other): Produs(other) {
 std::ostream &operator<<(std::ostream &os, const Caffe_latte &latte) {
     os << static_cast<const Produs &>(latte) << " cream: " << latte.cream << " lapte: " << latte.lapte << " zahar: " << latte.zahar;
     return os;
+}
+
+void Caffe_latte::incalzeste() {
+    temperatura=27;
+    std::cout<<"Caffee latte la temperatura camerei";
 }
 
 Caffe_latte::~Caffe_latte()=default;

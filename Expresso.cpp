@@ -8,7 +8,7 @@
 
 Expresso::Expresso() = default;
 
-Expresso::Expresso(const std::string &denumire, double pret, Data &expirare, Data &fabricatie, std::string aroma) : Produs(denumire, pret, expirare, fabricatie), aroma(std::move(aroma)) {}
+Expresso::Expresso(const std::string &denumire, double pret, Data &expirare, Data &fabricatie, int temperatura, std::string aroma) : Produs(denumire, pret, expirare, fabricatie, temperatura), aroma(std::move(aroma)) {}
 
 Expresso::Expresso(const Expresso &other) = default;
 
@@ -24,6 +24,12 @@ Expresso &Expresso::operator=(const Expresso &other) {
 std::ostream &operator<<(std::ostream &os, const Expresso &expresso) {
     os << static_cast<const Produs &>((const Produs &) expresso) << " aroma: " << expresso.aroma;
     return os;
+}
+
+void Expresso::incalzeste() {
+
+    if (temperatura>30)std::cout<<"Expresso este incalzit";
+    else std::cout<<"Expresso-ul s-a racit";
 }
 
 Expresso::~Expresso() = default;

@@ -15,9 +15,9 @@ class Caffe_latte : public Produs {
     double zahar;
 public:
     Caffe_latte();
-    Caffe_latte(const std::string &denumire, double pret, Data &expirare, Data &fabricatie, double cream, double lapte, double zahar);
+    Caffe_latte(const std::string &denumire, double pret, Data &expirare, Data &fabricatie,int temperatura, double cream, double lapte, double zahar);
     Caffe_latte(const Caffe_latte& other);
-    void incalzeste() override{};
+    void incalzeste() override;
     friend std::ostream &operator<<(std::ostream &os, const Caffe_latte &latte);
     ~Caffe_latte() override;
 };

@@ -10,7 +10,7 @@ Produs::Produs() : expirare(*new Data()), fabricatie(*new Data()) {
     pret = 0;
 }
 
-Produs::Produs(std::string denumire, double pret, Data &expirare, Data &fabricatie) : denumire(std::move(denumire)), pret(pret), expirare(expirare), fabricatie(fabricatie) {}
+Produs::Produs(std::string denumire, double pret, Data &expirare, Data &fabricatie, int temperatura) : denumire(std::move(denumire)), pret(pret), expirare(expirare), fabricatie(fabricatie), temperatura(temperatura){}
 
 Produs::Produs(const Produs &other) = default;
 
@@ -19,6 +19,7 @@ Produs &Produs::operator=(const Produs &other) {
     pret = other.pret;
     expirare = other.expirare;
     fabricatie = other.fabricatie;
+    temperatura=other.temperatura;
     return *this;
 }
 
