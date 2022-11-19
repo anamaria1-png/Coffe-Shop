@@ -16,9 +16,9 @@ int main() {
     Client client("Tom", "Tom", "Bucuresti", 60, 0, 0);
     Data f(1, 9, 2022); // creem un obiect de tip Data pentru a il folosi in Irish
     Data ex(1,12,2022);
-    Expresso expresso("Vanilla delight",15,f,ex,"vanilie");
-    Irish_coffee irish("Haloween expresso",12,f,ex,50,30,  20);
-    Caffe_latte cl("Latte", 14,f,ex,30,25,50);
+    Expresso expresso("Vanilla delight",15,f,ex,27, "vanilie");
+    Irish_coffee irish("Haloween expresso",12,f,ex,27,50,30,  20);
+    Caffe_latte cl("Latte", 14,f,ex,27,30,25,50);
     Angajat a("Ana","Maria","Brasov",21,1500,true,false,8);
     Data an(3,5,2022);
     Client ca("Sam","Jack","Craiova",40,5,50);
