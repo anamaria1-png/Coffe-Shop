@@ -6,11 +6,16 @@
 
 #include <utility>
 
+int Produs::next_id=0;
 Produs::Produs() : expirare(*new Data()), fabricatie(*new Data()) {
     pret = 0;
+    temperatura=15;
+    id=next_id;
+    next_id++;
 }
 
-Produs::Produs(std::string denumire, double pret, Data &expirare, Data &fabricatie, int temperatura) : denumire(std::move(denumire)), pret(pret), expirare(expirare), fabricatie(fabricatie), temperatura(temperatura){}
+Produs::Produs(std::string denumire, double pret, Data &expirare, Data &fabricatie, int temperatura) : denumire(std::move(denumire)), pret(pret), expirare(expirare), fabricatie(fabricatie),temperatura(temperatura){id=next_id;
+    next_id++;}
 
 Produs::Produs(const Produs &other) = default;
 

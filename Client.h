@@ -10,6 +10,7 @@
 #include "Produs.h"
 
 class Client : public Persoana {
+    int nrProduseCumparate;
     int baniCheltuiti;
     int id;
     static int next_id;

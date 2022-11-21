@@ -4,18 +4,28 @@
 
 #include "Client.h"
 
+int Client::next_id=0;
 
-Client::Client()=default;
+Client::Client(){
+    baniCheltuiti=100;
+    nrProduseCumparate=2;
+    this->id=next_id;
+    next_id++;
+}
 
-Client::Client(const std::string &nume, const std::string &prenume, const std::string &oras, int varsta, int nrProduseCumparate, int baniCheltuiti) : Persoana(nume, prenume, oras, varsta), nrProduseCumparate(nrProduseCumparate), baniCheltuiti(baniCheltuiti) {}
+Client::Client(const std::string &nume, const std::string &prenume, const std::string &oras, int varsta, int nrProduseCumparate, int baniCheltuiti) : Persoana(nume, prenume, oras, varsta), nrProduseCumparate(nrProduseCumparate), baniCheltuiti(baniCheltuiti) {
+    id=next_id;
+    next_id++;
+}
 
 Client::Client(const Client &other) : Persoana(other) {
-    nrProduseCumparate = other.nrProduseCumparate;
+    id=other.id;
+    nrProduseCumparate=other.nrProduseCumparate;
     baniCheltuiti = other.baniCheltuiti;
 }
 
 Client &Client::operator=(const Client &other) {
-    nrProduseCumparate = other.nrProduseCumparate;
+    nrProduseCumparate=other.nrProduseCumparate;
     baniCheltuiti = other.baniCheltuiti;
     nume = other.nume;
     prenume = other.prenume;
