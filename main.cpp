@@ -31,6 +31,7 @@ int main() {
     std::cout << irish.stareProdus(an) << '\n';
     std::cout << client.pretProdus(irish, an) << '\n';
     std::cout << an.diferentaData(f) << '\n';
+    irish.incalzeste();
     for (auto &produs : produse) {delete produs;}
     return 0;
 }

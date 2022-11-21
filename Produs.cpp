@@ -49,7 +49,10 @@ std::string Produs::stareProdus(const Data &data) {
     else return "Produsul e expirat";
 }
 
-
+void Produs::incalzeste() {
+    if (temperatura <10)denumire="Iced-coffee";
+    std::cout<<denumire<<" produs";
+}
 
 
 Produs::~Produs() = default;

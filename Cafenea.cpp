@@ -15,6 +15,7 @@ void Cafenea::dynamiccast() {
     Data ex(1,12,2022);
     Produs *tempProdus = new Caffe_latte{"Latte", 14,f,ex,27,25,50, 30};
     if(auto* tempProdus2 = dynamic_cast<Expresso *>(tempProdus)) {
+        //temp.o fucntie din derivata care sa nu fie in baza
         std::cout<<"Convertire la expresso reusita ";
     }
     else {

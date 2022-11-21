@@ -27,7 +27,7 @@ public:
     double getPret() const;
     std::string stareProdus(const Data&data);
     const Data &getExpirare() const;
-    virtual void incalzeste()=0;
+    virtual void incalzeste();
     friend std::ostream &operator<<(std::ostream &os, const Produs &produs);
     friend void swap(Produs& obj1,Produs& obj2);
     virtual ~Produs();
