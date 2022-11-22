@@ -31,6 +31,8 @@ public:
     friend std::ostream &operator<<(std::ostream &os, const Produs &produs);
     friend void swap(Produs& obj1,Produs& obj2);
     virtual ~Produs();
+
+    void eliminareAlergeni();
 };
 
 

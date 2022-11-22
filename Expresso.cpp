@@ -32,4 +32,10 @@ void Expresso::incalzeste() {
     else std::cout<<"Expresso-ul s-a racit";
 }
 
+void Expresso::amar() {
+    if(aroma=="amara")
+        denumire="Cafea cu aroma amara";
+    std::cout<<denumire;
+}
+
 Expresso::~Expresso() = default;

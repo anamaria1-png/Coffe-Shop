@@ -32,6 +32,9 @@ int main() {
     std::cout << client.pretProdus(irish, an) << '\n';
     std::cout << an.diferentaData(f) << '\n';
     irish.incalzeste();
+    irish.alcool();
+    expresso.amar();
+    cl.eliminareAlergeni();
     for (auto &produs : produse) {delete produs;}
     return 0;
 }

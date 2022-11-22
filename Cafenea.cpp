@@ -16,19 +16,23 @@ void Cafenea::dynamiccast() {
     Produs *tempProdus = new Caffe_latte{"Latte", 14,f,ex,27,25,50, 30};
     if(auto* tempProdus2 = dynamic_cast<Expresso *>(tempProdus)) {
         //temp.o fucntie din derivata care sa nu fie in baza
-        std::cout<<"Convertire la expresso reusita ";
+        tempProdus2->amar();
+        std::cout<<"Convertire la expresso amar reusit \n";
     }
     else {
         std::cout << "Convertire nereusita\n";
     }
     if(auto* tempProdus2 = dynamic_cast<Irish_coffee *>(tempProdus)) {
-        std::cout<<"Convertire la irish coffee reusita";
+        tempProdus2->alcool();
+        std::cout<<"Convertire la irish coffee reusita\n";
     }
     else {
         std::cout << "Convertire nereusita\n";
     }
-    if(auto* tempNava2 = dynamic_cast<Caffe_latte*>(tempProdus)) {
-        std::cout<<"Convertire la caffee latte reusita";
+    if(auto* tempProdus2 = dynamic_cast<Caffe_latte*>(tempProdus)) {
+
+        tempProdus2->eliminareAlergeni();
+        std::cout<<"Convertire la caffee latte reusita\n";
     }
     else {
         std::cout << "Convertire nereusita\n";

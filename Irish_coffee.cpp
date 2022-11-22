@@ -34,8 +34,15 @@ Irish_coffee::Irish_coffee(const Irish_coffee &other): Produs(other) {
 }
 
 void Irish_coffee::incalzeste() {
-    if(temperatura <15)std::cout<<"Irish coffee-ul este ice";
-    else std::cout<<"Irish coffee cald";
+    if(temperatura <15)std::cout<<"Irish coffee-ul este ice\n";
+    else std::cout<<"Irish coffee cald\n";
+}
+
+void Irish_coffee::alcool() {
+    if(whiskey>20) {
+        cream = cream * 2;
+        whiskey=whiskey-10;
+    }
 }
 
 Irish_coffee::~Irish_coffee() = default;

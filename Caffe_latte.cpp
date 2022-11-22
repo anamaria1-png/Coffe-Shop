@@ -23,7 +23,13 @@ std::ostream &operator<<(std::ostream &os, const Caffe_latte &latte) {
 
 void Caffe_latte::incalzeste() {
     temperatura=27;
-    std::cout<<"Caffee latte la temperatura camerei";
+    std::cout<<"Caffee latte la temperatura camerei\n";
+}
+
+void Caffe_latte::eliminareAlergeni() {
+    if(denumire=="Produsul poate contine lactoza")
+        lapte=0;
+     std::cout<<"Laptele a fost eliminat din cafea\n";
 }
 
 Caffe_latte::~Caffe_latte()=default;

@@ -54,5 +54,4 @@ void Produs::incalzeste() {
     std::cout<<denumire<<" produs";
 }
 
-
 Produs::~Produs() = default;

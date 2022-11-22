@@ -18,6 +18,7 @@ public:
     Irish_coffee(const Irish_coffee& other);
     Irish_coffee& operator=(const Irish_coffee &other);
     void incalzeste() override;
+    void alcool();
     friend std::ostream &operator<<(std::ostream &os, const Irish_coffee &coffee);
     ~Irish_coffee() override;
 };
