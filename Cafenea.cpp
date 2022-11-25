@@ -3,6 +3,13 @@
 //
 
 #include "Cafenea.h"
+Cafenea::Cafenea() = default;
+
+Cafenea &Cafenea::operator=(const Cafenea&obj) {
+    Cafenea temp(obj);
+    swap(*this, temp);
+    return *this;
+}
 
 void swap(Cafenea &obj1, Cafenea &obj2) {
     std::swap(obj1.caffees_latte, obj2.caffees_latte);
@@ -13,7 +20,15 @@ void swap(Cafenea &obj1, Cafenea &obj2) {
 void Cafenea::dynamiccast() {
     Data f(1, 9, 2022);
     Data ex(1,12,2022);
-    Produs *tempProdus = new Caffe_latte{"Latte", 14,f,ex,27,25,50, 30};
+    int x = 0;
+    Produs *tempProdus;
+    std::cin >> x;
+    if(x == 1)
+        tempProdus = new Expresso;
+    else if(x == 2)
+        tempProdus = new Irish_coffee;
+    else
+        tempProdus = new Caffe_latte;
     if(auto* tempProdus2 = dynamic_cast<Expresso *>(tempProdus)) {
         //temp.o fucntie din derivata care sa nu fie in baza
         tempProdus2->amar();
@@ -39,3 +54,6 @@ void Cafenea::dynamiccast() {
     }
     delete tempProdus;
 }
+
+Cafenea::~Cafenea() = default;
+

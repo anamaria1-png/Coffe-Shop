@@ -7,6 +7,7 @@
 #include "Persoana.h"
 #include "Caffe_latte.h"
 #include "Produs.h"
+#include "Cafenea.h"
 #include<vector>
 #include<memory>
 
@@ -35,6 +36,8 @@ int main() {
     irish.alcool();
     expresso.amar();
     cl.eliminareAlergeni();
+    Cafenea cafi;
+    cafi.dynamiccast();
     for (auto &produs : produse) {delete produs;}
     return 0;
 }
