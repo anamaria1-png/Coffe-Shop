@@ -16,9 +16,7 @@ public:
     Expresso(const Expresso &other);
     Expresso& operator =(const Expresso &other);
     void incalzeste() override;
-
-    Produs *clone() const override;
-
+    [[nodiscard]]Produs *clone() const override;
     void amar();
     friend std:: ostream & operator<<(std::ostream &os, const Expresso & expresso);
     ~Expresso() override;

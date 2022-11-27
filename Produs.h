@@ -13,12 +13,12 @@
 class Produs {
 protected:
     std::string denumire;
-    double pret;
+    double pret=15;
     Data expirare;
     Data fabricatie;
     int id;
     static int next_id;
-    int temperatura;
+    int temperatura=27;
 public:
     Produs();
     Produs(std::string denumire, double pret, Data &expirare, Data &fabricatie,int temperatura);
@@ -32,7 +32,7 @@ public:
     friend std::ostream &operator<<(std::ostream &os, const Produs &produs);
     friend void swap(Produs& obj1,Produs& obj2);
     virtual ~Produs();
-    void eliminareAlergeni();
+    virtual void eliminareAlergeni();
 };
 
 

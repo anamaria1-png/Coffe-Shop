@@ -16,7 +16,11 @@ nrInregMax++;
 Comanda::Comanda(std::vector<Produs*> produse, Data &data, Client &client, Angajat &angajat) : produse(std::move(produse)), data(data), client(client), angajat(angajat) {nrInreg= nrInregMax;
     nrInregMax++;}
 
-Comanda::Comanda(const Comanda &other) = default;
+
+Comanda::Comanda(const Comanda &other): nrInreg(nrInregMax), data(other.data),client(other.client),angajat(other.angajat){
+    for(auto &produs:other.produse)
+        produse.push_back(produs->clone());
+}
 
 Comanda &Comanda::operator=(const Comanda &other) {
     produse = other.produse;
@@ -27,39 +31,23 @@ Comanda &Comanda::operator=(const Comanda &other) {
 }
 
 std::ostream &operator<<(std::ostream &os, const Comanda &comanda) {
+    os<<"nrInreg: "<<comanda.nrInreg;
     os << "produse: ";
-    for (const auto &it: comanda.produse)
+    for (const auto &it: comanda.produse) {
         os << it << " ";
+    }
     os << "data: " << comanda.data << " client: " << comanda.client << " angajat: " << comanda.angajat;
     return os;
 }
 
-void Comanda::verificare_comanda(const std::shared_ptr<Comanda> &comanda1, const std::shared_ptr<Comanda> &comanda2) {
-    if (comanda1->getStareComanda() == Comanda::ANULATA)
-        throw new class comanda_anulata_client();
-
-    if(comanda2->getStareComanda() == Comanda::ANULATA) {
-        throw new class comanda_anulata_intarziata();
+void Comanda::verificare_comanda() {
+    switch(stareComanda){
+        case PLASATA:
+            break;
+        case ANULATA:
+            throw eroare_comanda_anulata();
+        case INTARZIATA:
+            throw  eroare_comanda_incurcata();
     }
-
 }
-/*bool operator==(const Comanda& comanda, const Comanda& comanda2) {
-    if(port.tara == port2.tara && port.oras == port2.oras)
-        return true;
-    return false;
-}*/
-
-void Comanda::comanda_anulata_client() {
-    this->stareComanda=ANULATA;
-
-}
-
-void Comanda::comanda_anulata_intarziata() {
-    this->stareComanda=INTARZIATA;
-}
-
-int Comanda::getStareComanda() const {
-    return stareComanda;
-}
-
 Comanda::~Comanda() = default;

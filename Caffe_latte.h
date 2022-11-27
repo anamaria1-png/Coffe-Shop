@@ -10,18 +10,16 @@
 
 
 class Caffe_latte : public Produs {
-    double cream;
-    double lapte;
-    double zahar;
+    double cream=0;
+    double lapte=20;
+    double zahar=0;
 public:
     Caffe_latte();
     Caffe_latte(const std::string &denumire, double pret, Data &expirare, Data &fabricatie,int temperatura, double cream, double lapte, double zahar);
     Caffe_latte(const Caffe_latte& other);
     void incalzeste() override;
-
-    Produs *clone() const override;
-
-    void eliminareAlergeni();
+    [[nodiscard]] Produs *clone() const override;
+    void eliminareAlergeni()override ;
     friend std::ostream &operator<<(std::ostream &os, const Caffe_latte &latte);
     ~Caffe_latte() override;
 };

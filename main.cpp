@@ -36,6 +36,9 @@ int main() {
     irish.alcool();
     expresso.amar();
     cl.eliminareAlergeni();
+    comanda.verificare_comanda();
+    Comanda c1=comanda;
+    c1.verificare_comanda();
     int x = 0;
     std::cin >> x;
     Cafenea cafi;

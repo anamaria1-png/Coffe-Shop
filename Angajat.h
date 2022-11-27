@@ -10,10 +10,10 @@
 
 class Angajat : public Persoana {
 private:
-    double salariu;
-    bool lucreazaInWeekend;
-    bool lucreazaPartTime;
-    int oraStartProgram;
+    double salariu=2000;
+    bool lucreazaInWeekend=false;
+    bool lucreazaPartTime=true;
+    int oraStartProgram=8;
     static int next_nr_angajat;
 public:
     Angajat();// reda un obiect gol

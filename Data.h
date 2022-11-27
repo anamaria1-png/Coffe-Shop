@@ -8,9 +8,9 @@
 
 class Data {
 private:
-    int zi;
-    int luna;
-    int an;
+    int zi=1;
+    int luna=1;
+    int an=2022;
 public:
     Data();
     Data(int zi, int luna, int an);

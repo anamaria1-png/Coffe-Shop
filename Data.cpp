@@ -10,12 +10,7 @@ Data::Data(int zi, int luna, int an) : zi(zi), luna(luna), an(an) {}
 
 Data::Data(const Data &other) = default;
 
-Data &Data::operator=(const Data &other) {
-    zi = other.zi;
-    luna = other.luna;
-    an = other.an;
-    return *this;
-}
+Data &Data::operator=(const Data &other) = default;
 
 std::ostream &operator<<(std::ostream &os, const Data &data) {
     os << "zi: " << data.zi << " luna: " << data.luna << " an: " << data.an;

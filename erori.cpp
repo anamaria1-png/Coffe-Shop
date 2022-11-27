@@ -4,14 +4,15 @@
 
 #include "erori.h"
 
-const char *comanda_anulata_client::what() const noexcept {
+const char *eroare_comanda::what() const noexcept {
     return "Comanda a fost anulata de client";
+
 }
 
-const char *comanda_anulata_intarziata::what() const noexcept {
+const char *eroare_comanda_anulata::what() const noexcept {
     return "Comanda a fost anulata din cauza intarzierii ";
 }
 
-const char *comanda_inversata::what() const noexcept {
+const char *eroare_comanda_incurcata::what() const noexcept {
     return "Comanda este inversata intre doi clienti";
 }

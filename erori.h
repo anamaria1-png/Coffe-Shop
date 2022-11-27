@@ -6,17 +6,17 @@
 #define OOP_ERORI_H
 #include<exception>
 
-class comanda_anulata_client : public std::exception {
+class eroare_comanda: public std::exception {
 public:
     [[nodiscard]] const char* what() const noexcept override;
 };
 
-class comanda_anulata_intarziata : public std::exception {
+class eroare_comanda_anulata : public eroare_comanda {
 public:
     [[nodiscard]] const char* what() const noexcept override;
 };
 
-class comanda_inversata: public std::exception {
+class eroare_comanda_incurcata: public eroare_comanda {
 public:
     [[nodiscard]] const char* what() const noexcept override;
 };

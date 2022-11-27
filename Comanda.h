@@ -22,8 +22,8 @@ private:
     Data data;
     Client client;
     Angajat angajat;
-    int ANULATA, INTARZIATA;
-    char stareComanda;
+    enum stare{PLASATA, ANULATA, INTARZIATA};
+    stare stareComanda=PLASATA;
 public:
     Comanda();
     Comanda(std::vector<Produs*> produse, Data &data, Client &client, Angajat &angajat);
@@ -31,10 +31,7 @@ public:
     Comanda& operator=(const Comanda &other);
     friend std::ostream &operator<<(std::ostream &os, const Comanda &comanda);
     virtual ~Comanda();
-    [[nodiscard]] int getStareComanda() const;
-    void verificare_comanda(const std::shared_ptr<Comanda> &comanda1, const std::shared_ptr<Comanda> &comanda2);
-    void comanda_anulata_client();
-    void comanda_anulata_intarziata();
+    void verificare_comanda();
 };
 
 

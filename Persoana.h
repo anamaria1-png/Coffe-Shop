@@ -12,7 +12,7 @@ protected:
     std::string nume;
     std::string prenume;
     std::string oras;
-    int varsta;
+    int varsta=18;
 public:
     Persoana();
     Persoana(std::string nume, std::string prenume, std::string oras, int varsta);
