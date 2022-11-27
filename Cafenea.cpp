@@ -51,5 +51,8 @@ void Cafenea:: dynamiccast(Produs *tempProdus) {
     delete tempProdus;
 }
 
-Cafenea::~Cafenea() = default;
+Cafenea::~Cafenea() {
+
+    for (auto &produs: produse) { delete produs; }
+}
 

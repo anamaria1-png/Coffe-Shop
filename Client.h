@@ -11,8 +11,8 @@
 
 class Client : public Persoana {
     int nrProduseCumparate=3;
-    int baniCheltuiti=400;
-    int id;
+    int baniCheltuiti = 400;
+    const int id;
     static int next_id;
 public:
     Client();

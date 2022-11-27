@@ -16,7 +16,7 @@
 
 class Comanda {
 private:
-    int nrInreg;
+    const int nrInreg;
     static int nrInregMax;
     std::vector<Produs*> produse;
     Data data;

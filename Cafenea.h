@@ -27,6 +27,7 @@ public:
     friend void swap(Cafenea& obj1, Cafenea& obj2);
     virtual ~Cafenea();
 
+
 };
 
 

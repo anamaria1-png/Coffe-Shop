@@ -6,21 +6,23 @@
 
 int Client::next_id=0;
 
-Client::Client(){
-    baniCheltuiti=100;
-    nrProduseCumparate=2;
-    this->id=next_id;
+Client::Client() : id(next_id) {
+    baniCheltuiti = 100;
+    nrProduseCumparate = 2;
     next_id++;
 }
 
-Client::Client(const std::string &nume, const std::string &prenume, const std::string &oras, int varsta, int nrProduseCumparate, int baniCheltuiti) : Persoana(nume, prenume, oras, varsta), nrProduseCumparate(nrProduseCumparate), baniCheltuiti(baniCheltuiti) {
-    id=next_id;
+Client::Client(const std::string &nume, const std::string &prenume, const std::string &oras, int varsta,
+               int nrProduseCumparate, int baniCheltuiti) : Persoana(nume, prenume, oras, varsta),
+                                                            nrProduseCumparate(nrProduseCumparate),
+                                                            baniCheltuiti(baniCheltuiti), id(next_id) {
+
     next_id++;
 }
 
-Client::Client(const Client &other) : Persoana(other) {
-    id=other.id;
-    nrProduseCumparate=other.nrProduseCumparate;
+Client::Client(const Client &other) : Persoana(other), id(next_id) {
+    next_id++;
+    nrProduseCumparate = other.nrProduseCumparate;
     baniCheltuiti = other.baniCheltuiti;
 }
 

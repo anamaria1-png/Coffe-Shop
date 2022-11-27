@@ -7,15 +7,17 @@
 #include <utility>
 
 int Produs::next_id=0;
-Produs::Produs() : expirare(*new Data()), fabricatie(*new Data()) {
+Produs::Produs() : expirare(Data()), fabricatie(Data()), id(next_id) {
     pret = 0;
-    temperatura=15;
-    id=next_id;
+    temperatura = 15;
     next_id++;
 }
 
-Produs::Produs(std::string denumire, double pret, Data &expirare, Data &fabricatie, int temperatura) : denumire(std::move(denumire)), pret(pret), expirare(expirare), fabricatie(fabricatie),temperatura(temperatura){id=next_id;
-    next_id++;}
+Produs::Produs(std::string denumire, double pret, Data &expirare, Data &fabricatie, int temperatura) : denumire(
+        std::move(denumire)), pret(pret), expirare(expirare), fabricatie(fabricatie), id(next_id), temperatura(
+        temperatura) {
+    next_id++;
+}
 
 Produs::Produs(const Produs &other) = default;
 
@@ -29,7 +31,8 @@ Produs &Produs::operator=(const Produs &other) {
 }
 
 std::ostream &operator<<(std::ostream &os, const Produs &produs) {
-    os << "denumire: " << produs.denumire << " pret: " << produs.pret << " expirare: " << produs.expirare << " fabricatie: " << produs.fabricatie;
+    os << "denumire: " << produs.denumire << " pret: " << produs.pret << " expirare: " << produs.expirare
+       << " fabricatie: " << produs.fabricatie << produs.id;
     return os;
 }
 

@@ -8,6 +8,7 @@
 #include "Caffe_latte.h"
 #include "Produs.h"
 #include "Cafenea.h"
+#include "erori.h"
 #include<vector>
 #include<memory>
 
@@ -43,14 +44,16 @@ int main() {
     std::cin >> x;
     Cafenea cafi;
     Produs *tempProdus;
-    if(x == 1)
+    if (x == 1)
         tempProdus = new Expresso;
-    else if(x == 2)
+    else if (x == 2)
         tempProdus = new Irish_coffee;
     else
-        tempProdus =new Caffe_latte;
-    cafi.dynamiccast(tempProdus);
-
-    for (auto &produs : produse) {delete produs;}
+        tempProdus = new Caffe_latte;
+    try {
+        cafi.dynamiccast(tempProdus);
+    }
+    catch (eroare_comanda &e) { std::cout << e.what(); }
+    for (auto &produs: produse) { delete produs; }
     return 0;
 }

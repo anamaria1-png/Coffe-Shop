@@ -9,12 +9,18 @@
 
 int Comanda::nrInregMax=0;
 
-Comanda::Comanda() : data(), client(), angajat() {nrInreg= nrInregMax;
-nrInregMax++;
+Comanda::Comanda() : nrInreg(nrInregMax), data(), client(), angajat() {
+    nrInregMax++;
 }
 
-Comanda::Comanda(std::vector<Produs*> produse, Data &data, Client &client, Angajat &angajat) : produse(std::move(produse)), data(data), client(client), angajat(angajat) {nrInreg= nrInregMax;
-    nrInregMax++;}
+Comanda::Comanda(std::vector<Produs *> produse, Data &data, Client &client, Angajat &angajat) : nrInreg(nrInregMax),
+                                                                                                produse(std::move(
+                                                                                                        produse)),
+                                                                                                data(data),
+                                                                                                client(client),
+                                                                                                angajat(angajat) {
+    nrInregMax++;
+}
 
 
 Comanda::Comanda(const Comanda &other): nrInreg(nrInregMax), data(other.data),client(other.client),angajat(other.angajat){
@@ -27,6 +33,7 @@ Comanda &Comanda::operator=(const Comanda &other) {
     data = other.data;
     client = other.client;
     angajat = other.angajat;
+    stareComanda = other.stareComanda;
     return *this;
 }
 
@@ -41,13 +48,16 @@ std::ostream &operator<<(std::ostream &os, const Comanda &comanda) {
 }
 
 void Comanda::verificare_comanda() {
-    switch(stareComanda){
+    switch (stareComanda) {
         case PLASATA:
             break;
         case ANULATA:
             throw eroare_comanda_anulata();
         case INTARZIATA:
-            throw  eroare_comanda_incurcata();
+            throw eroare_comanda_incurcata();
     }
 }
-Comanda::~Comanda() = default;
+
+Comanda::~Comanda() {
+    for (auto &produs: produse) { delete produs; }
+}
