@@ -36,8 +36,18 @@ int main() {
     irish.alcool();
     expresso.amar();
     cl.eliminareAlergeni();
+    int x = 0;
+    std::cin >> x;
     Cafenea cafi;
-    cafi.dynamiccast();
+    Produs *tempProdus;
+    if(x == 1)
+        tempProdus = new Expresso;
+    else if(x == 2)
+        tempProdus = new Irish_coffee;
+    else
+        tempProdus =new Caffe_latte;
+    cafi.dynamiccast(tempProdus);
+
     for (auto &produs : produse) {delete produs;}
     return 0;
 }

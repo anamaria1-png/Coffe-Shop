@@ -32,6 +32,10 @@ void Caffe_latte::eliminareAlergeni() {
      std::cout<<"Laptele a fost eliminat din cafea\n";
 }
 
+Produs *Caffe_latte::clone() const {
+    return new Caffe_latte(*this);
+}
+
 Caffe_latte::~Caffe_latte()=default;
 
 

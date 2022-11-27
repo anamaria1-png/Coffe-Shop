@@ -45,4 +45,8 @@ void Irish_coffee::alcool() {
     }
 }
 
+Produs *Irish_coffee::clone() const {
+    return new Irish_coffee(*this);
+}
+
 Irish_coffee::~Irish_coffee() = default;

@@ -28,10 +28,10 @@ public:
     std::string stareProdus(const Data&data);
     const Data &getExpirare() const;
     virtual void incalzeste();
+    virtual Produs*clone() const=0;
     friend std::ostream &operator<<(std::ostream &os, const Produs &produs);
     friend void swap(Produs& obj1,Produs& obj2);
     virtual ~Produs();
-
     void eliminareAlergeni();
 };
 

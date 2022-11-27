@@ -38,4 +38,8 @@ void Expresso::amar() {
     std::cout<<denumire;
 }
 
+Produs *Expresso::clone() const {
+    return new Expresso(*this);
+}
+
 Expresso::~Expresso() = default;

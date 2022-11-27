@@ -16,11 +16,13 @@ class Cafenea {
     std::vector<std::shared_ptr<Caffe_latte>> caffees_latte;
     std::vector<std::shared_ptr<Irish_coffee>> irish_coffees;
     std::vector<std::shared_ptr<Expresso>>expressos;
+    std:: vector<Produs*>produse;
 
 public:
     Cafenea();
     Cafenea& operator=(const Cafenea &obj);
-    void dynamiccast();
+    Cafenea(const Cafenea& other);
+    void dynamiccast(Produs*);
     friend void swap(Cafenea& obj1, Cafenea& obj2);
     virtual ~Cafenea();
 
