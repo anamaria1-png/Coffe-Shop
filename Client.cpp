@@ -37,7 +37,9 @@ Client &Client::operator=(const Client &other) {
 }
 
 std::ostream &operator<<(std::ostream &os, const Client &client) {
-    os << static_cast<const Persoana &>(client) << " nrProduseCumparate: " << client.nrProduseCumparate << " baniCheltuiti: " << client.baniCheltuiti;
+    os << static_cast<const Persoana &>(client)
+       << " nrProduseCumparate: " << client.nrProduseCumparate << " baniCheltuiti: " << client.baniCheltuiti
+       << client.id;
     return os;
 }
 
