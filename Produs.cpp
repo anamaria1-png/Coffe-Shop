@@ -54,4 +54,8 @@ void Produs::incalzeste() {
     std::cout<<denumire<<" produs";
 }
 
+void Produs::eliminareAlergeni() {
+
+}
+
 Produs::~Produs() = default;
