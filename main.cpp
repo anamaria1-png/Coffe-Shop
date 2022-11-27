@@ -54,6 +54,5 @@ int main() {
         cafi.dynamiccast(tempProdus);
     }
     catch (eroare_comanda &e) { std::cout << e.what(); }
-    delete tempProdus;
     return 0;
 }
