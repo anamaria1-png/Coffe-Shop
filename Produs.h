@@ -12,6 +12,7 @@
 
 class Produs {
 protected:
+    int cafeina = 15;
     std::string denumire;
     double pret=15;
     Data expirare;
@@ -21,16 +22,18 @@ protected:
     int temperatura=27;
 public:
     Produs();
-    Produs(std::string denumire, double pret, Data &expirare, Data &fabricatie,int temperatura);
+
+    Produs(int cafeina, std::string denumire, double pret, Data &expirare, Data &fabricatie, int temperatura);
+
     Produs(const Produs &other);
 
     Produs &operator=(const Produs &other);
 
-    [[nodiscard]]double getPret() const;
+    //[nodiscard]]double getPret() const;
 
     std::string stareProdus(const Data &data);
 
-    [[nodiscard]]const Data &getExpirare() const;
+    //[[nodiscard]]const Data &getExpirare() const;
 
     virtual void incalzeste();
 

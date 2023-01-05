@@ -10,7 +10,6 @@
 #include "Cafenea.h"
 #include "erori.h"
 #include<vector>
-#include<memory>
 
 
 int main() {
