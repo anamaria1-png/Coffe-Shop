@@ -8,12 +8,15 @@
 
 Expresso::Expresso() = default;
 
-Expresso::Expresso(const std::string &denumire, double pret, Data &expirare, Data &fabricatie, int temperatura, std::string aroma) : Produs(denumire, pret, expirare, fabricatie, temperatura), aroma(std::move(aroma)) {}
+Expresso::Expresso(int cafeina, const std::string &denumire, double pret, Data &expirare, Data &fabricatie,
+                   int temperatura, std::string aroma) : Produs(cafeina, denumire, pret, expirare, fabricatie,
+                                                                temperatura), aroma(std::move(aroma)) {}
 
 Expresso::Expresso(const Expresso &other) = default;
 
 Expresso &Expresso::operator=(const Expresso &other) {
     aroma = other.aroma;
+    cafeina = other.cafeina;
     denumire = other.denumire;
     pret = other.pret;
     expirare = other.expirare;
@@ -33,13 +36,19 @@ void Expresso::incalzeste() {
 }
 
 void Expresso::amar() {
-    if(aroma=="amara")
-        denumire="Cafea cu aroma amara";
-    std::cout<<denumire;
+    if (aroma == "amara")
+        denumire = "Cafea cu aroma amara";
+    std::cout << denumire;
 }
 
 Produs *Expresso::clone() const {
     return new Expresso(*this);
+}
+
+void Expresso::eliminareAlergeni() {
+    if (temperatura > 27)cafeina = 0;
+    aroma = "fara aroma de cafea";
+    std::cout << aroma;
 }
 
 Expresso::~Expresso() = default;

@@ -15,8 +15,11 @@ class Caffe_latte : public Produs {
     double zahar=0;
 public:
     Caffe_latte();
-    Caffe_latte(const std::string &denumire, double pret, Data &expirare, Data &fabricatie,int temperatura, double cream, double lapte, double zahar);
-    Caffe_latte(const Caffe_latte& other);
+
+    Caffe_latte(int cafeina, const std::string &denumire, double pret, Data &expirare, Data &fabricatie,
+                int temperatura, double cream, double lapte, double zahar);
+
+    Caffe_latte(const Caffe_latte &other);
     void incalzeste() override;
     [[nodiscard]] Produs *clone() const override;
     void eliminareAlergeni()override ;

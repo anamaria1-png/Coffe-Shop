@@ -6,12 +6,19 @@
 
 Irish_coffee::Irish_coffee()=default;
 
-Irish_coffee::Irish_coffee(const std::string &denumire, double pret, Data &expirare, Data &fabricatie, int temperatura, double whiskey, double cream, double zahar) : Produs(denumire, pret, expirare, fabricatie, temperatura), whiskey(whiskey), cream(cream), zahar(zahar) {}
+Irish_coffee::Irish_coffee(int cafeina, const std::string &denumire, double pret, Data &expirare, Data &fabricatie,
+                           int temperatura, double whiskey, double cream, double zahar) : Produs(cafeina, denumire,
+                                                                                                 pret, expirare,
+                                                                                                 fabricatie,
+                                                                                                 temperatura),
+                                                                                          whiskey(whiskey),
+                                                                                          cream(cream), zahar(zahar) {}
 
 Irish_coffee &Irish_coffee::operator=(const Irish_coffee &other) {
     whiskey = other.whiskey;
     cream = other.cream;
     zahar = other.zahar;
+    cafeina = other.cafeina;
     denumire = other.denumire;
     pret = other.pret;
     expirare = other.expirare;
@@ -39,14 +46,19 @@ void Irish_coffee::incalzeste() {
 }
 
 void Irish_coffee::alcool() {
-    if(whiskey>20) {
+    if (whiskey > 20) {
         cream = cream * 2;
-        whiskey=whiskey-10;
+        whiskey = whiskey - 10;
     }
 }
 
 Produs *Irish_coffee::clone() const {
     return new Irish_coffee(*this);
+}
+
+void Irish_coffee::eliminareAlergeni() {
+    if (temperatura > 27)cafeina = 0;
+    std::cout << "Cafeina a fost eliminata din irish\n";
 }
 
 Irish_coffee::~Irish_coffee() = default;

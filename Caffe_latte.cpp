@@ -6,8 +6,10 @@
 
 Caffe_latte::Caffe_latte()=default;
 
-Caffe_latte::Caffe_latte(const std::string &denumire, double pret, Data &expirare, Data &fabricatie, int temperatura, double cream,
-                         double lapte, double zahar) : Produs(denumire, pret, expirare, fabricatie, temperatura), cream(cream),
+Caffe_latte::Caffe_latte(int cafeina, const std::string &denumire, double pret, Data &expirare, Data &fabricatie,
+                         int temperatura, double cream,
+                         double lapte, double zahar) : Produs(cafeina, denumire, pret, expirare, fabricatie,
+                                                              temperatura), cream(cream),
                                                        lapte(lapte), zahar(zahar) {}
 
 Caffe_latte::Caffe_latte(const Caffe_latte &other): Produs(other) {

@@ -24,6 +24,7 @@ Produs::Produs(int cafeina, std::string denumire, double pret, Data &expirare, D
 Produs::Produs(const Produs &other) = default;
 
 Produs &Produs::operator=(const Produs &other) {
+    cafeina = other.cafeina;
     denumire = other.denumire;
     pret = other.pret;
     expirare = other.expirare;
@@ -33,7 +34,8 @@ Produs &Produs::operator=(const Produs &other) {
 }
 
 std::ostream &operator<<(std::ostream &os, const Produs &produs) {
-    os << "denumire: " << produs.denumire << " pret: " << produs.pret << " expirare: " << produs.expirare
+    os << "cafeina" << produs.cafeina << "denumire: " << produs.denumire << " pret: " << produs.pret << " expirare: "
+       << produs.expirare
        << " fabricatie: " << produs.fabricatie << produs.id;
     return os;
 }
@@ -61,6 +63,7 @@ void Produs::incalzeste() {
 
 void Produs::eliminareAlergeni() {
     if (temperatura > 27)cafeina = 0;
+    std::cout << "Cafeina eliminata din produs\n";
 
 }
 
