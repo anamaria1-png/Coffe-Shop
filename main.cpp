@@ -42,7 +42,7 @@ int main() {
     c1.verificare_comanda();
     int x = 0;
     std::cin >> x;
-    Cafenea cafi;
+    Cafenea servire;
     Produs *tempProdus;
     if (x == 1)
         tempProdus = new Expresso;
@@ -51,7 +51,7 @@ int main() {
     else
         tempProdus = new Caffe_latte;
     try {
-        cafi.dynamiccast(tempProdus);
+        servire.dynamiccast(tempProdus);
     }
     catch (eroare_comanda &e) { std::cout << e.what(); }
     return 0;
