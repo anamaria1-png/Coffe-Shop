@@ -7,11 +7,12 @@
 int Angajat::next_nr_angajat = 0;
 
 Angajat::Angajat() : nr_angajat(next_nr_angajat) {
-    next_nr_angajat++;
+
     salariu = 2000;
     lucreazaInWeekend = false;
     lucreazaPartTime = true;
     oraStartProgram = 9;
+    next_nr_angajat++;
 }
 
 Angajat::Angajat(const std::string &nume, const std::string &prenume, const std::string &oras, int varsta,
@@ -52,7 +53,10 @@ Angajat &Angajat::operator=(const Angajat &other) {
 }
 
 std::ostream &operator<<(std::ostream &os, const Angajat &angajat) {
-    os << static_cast<const Persoana &>(angajat) << " salariu: " << angajat.salariu << " lucreazaInWeekend: " << angajat.lucreazaInWeekend << " lucreazaPartTime: " << angajat.lucreazaPartTime << " oraStartProgram: " << angajat.oraStartProgram;
+    os << static_cast<const Persoana &>(angajat) << " salariu: " << angajat.salariu << " lucreazaInWeekend: "
+       << angajat.lucreazaInWeekend << " lucreazaPartTime: " << angajat.lucreazaPartTime << " oraStartProgram: "
+       << angajat.oraStartProgram;
+    os << angajat.nr_angajat;
     return os;
 }
 
