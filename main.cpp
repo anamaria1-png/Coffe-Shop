@@ -23,9 +23,9 @@ int main() {
     Angajat a("Ana", "Maria", "Brasov", 21, 1500, true, false, 8);
     Data an(3, 5, 2022);
     Client ca("Sam", "Jack", "Craiova", 40, 5, 50);
-    std::vector<Produs *> produse;
-    //std:: vector<std::shared_ptr <Produs >> produ;
-    produse.push_back(new Irish_coffee(irish));
+    //std::vector<Produs *> produse;
+    std::vector<std::shared_ptr<Produs >> produse;
+    produse.push_back(irish.clone());
     //produ.push_back(std::make_shared<Caffe_latte>(cl));
     //produse.push_back(new Expresso(expresso));
     Comanda comanda(produse, an, ca, a);
@@ -43,7 +43,7 @@ int main() {
     try {
         servire.insert(irish);
         auto &prod = servire.search("Lapte");
-        servire.servire_speciala(&prod);
+        Cafenea::servire_speciala(&prod);
         prod = servire.search("Cafea");
         std::cout << prod;
     }
