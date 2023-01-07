@@ -4,8 +4,15 @@
 
 #include "Angajat.h"
 
+int Angajat::next_nr_angajat = 0;
 
-Angajat::Angajat()=default;
+Angajat::Angajat() : nr_angajat(next_nr_angajat) {
+    next_nr_angajat++;
+    salariu = 2000;
+    lucreazaInWeekend = false;
+    lucreazaPartTime = true;
+    oraStartProgram = 9;
+}
 
 Angajat::Angajat(const std::string &nume, const std::string &prenume, const std::string &oras, int varsta,
                  double salariu, bool lucreazaInWeekend, bool lucreazaPartTime, int oraStartProgram) : Persoana(nume,
@@ -18,11 +25,14 @@ Angajat::Angajat(const std::string &nume, const std::string &prenume, const std:
                                                                                                        lucreazaPartTime(
                                                                                                                lucreazaPartTime),
                                                                                                        oraStartProgram(
-                                                                                                               oraStartProgram) {
+                                                                                                               oraStartProgram),
+                                                                                                       nr_angajat(
+                                                                                                               next_nr_angajat) {
     next_nr_angajat++;
 }
 
-Angajat::Angajat(const Angajat &other) : Persoana(other) {
+Angajat::Angajat(const Angajat &other) : Persoana(other), nr_angajat(next_nr_angajat) {
+    next_nr_angajat++;
     salariu = other.salariu;
     lucreazaInWeekend = other.lucreazaInWeekend;
     lucreazaPartTime = other.lucreazaPartTime;
