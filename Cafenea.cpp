@@ -35,16 +35,13 @@ void Cafenea::servire_speciala(Produs *tempProdus) {
 
 }
 
-Cafenea::~Cafenea() {
-
-//    for (auto &produs: produse) { delete produs; }
-}
+Cafenea::~Cafenea() = default;
 
 void Cafenea::insert(Produs &prod) {
     produse.push_back(prod.clone());
 }
 
-Produs &Cafenea::search(std::string text) {
+Produs &Cafenea::search(std::string const &text) {
     for (auto &pro: produse)
         if (pro->getDenumire().contains(text))
             return *pro;

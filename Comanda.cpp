@@ -13,20 +13,22 @@ Comanda::Comanda() : nrInreg(nrInregMax), data(), client(), angajat() {
     nrInregMax++;
 }
 
-Comanda::Comanda(std::vector<Produs *> produse, Data &data, Client &client, Angajat &angajat) : nrInreg(nrInregMax),
-                                                                                                produse(std::move(
-                                                                                                        produse)),
-                                                                                                data(data),
-                                                                                                client(client),
-                                                                                                angajat(angajat) {
+Comanda::Comanda(std::vector<std::shared_ptr<Produs>> produse, Data &data, Client &client, Angajat &angajat) : nrInreg(
+        nrInregMax),
+                                                                                                               produse(std::move(
+                                                                                                                       produse)),
+                                                                                                               data(data),
+                                                                                                               client(client),
+                                                                                                               angajat(angajat) {
     nrInregMax++;
 }
 
-
-Comanda::Comanda(const Comanda &other): nrInreg(nrInregMax), data(other.data),client(other.client),angajat(other.angajat){
-    for(auto &produs:other.produse)
+Comanda::Comanda(const Comanda &other) : nrInreg(nrInregMax), data(other.data), client(other.client),
+                                         angajat(other.angajat) {
+    for (auto &produs: other.produse)
         produse.push_back(produs->clone());
 }
+
 
 Comanda &Comanda::operator=(const Comanda &other) {
     produse = other.produse;
@@ -40,7 +42,7 @@ Comanda &Comanda::operator=(const Comanda &other) {
 std::ostream &operator<<(std::ostream &os, const Comanda &comanda) {
     os << "nrInreg: " << comanda.nrInreg << " ";
     os << "produse: ";
-    for (const auto it: comanda.produse) {
+    for (const auto &it: comanda.produse) {
         os << *it << " ";
     }
     os << "data: " << comanda.data << " client: " << comanda.client << " angajat: " << comanda.angajat;
@@ -62,6 +64,4 @@ void Comanda::verificare_comanda() {
     }
 }
 
-Comanda::~Comanda() {
-    for (auto &produs: produse) { delete produs; }
-}
+Comanda::~Comanda() = default;

@@ -16,8 +16,7 @@
 class Cafenea {
     //std::vector<std::shared_ptr<Caffe_latte>> caffees_latte;
     //std::vector<std::shared_ptr<Irish_coffee>> irish_coffees;
-    //std::vector<std::shared_ptr<Expresso>>expressos;
-
+    //std::vector<std::shared_ptr<Expresso>>expressos
     std::vector<std::shared_ptr<Produs>> produse;
 
 public:
@@ -27,11 +26,11 @@ public:
 
     Cafenea(const Cafenea &other);
 
-    void servire_speciala(Produs *tempProdus);
+    static void servire_speciala(Produs *tempProdus);
 
     void insert(Produs &prod);
 
-    Produs &search(std::string text);
+    Produs &search(std::string const &text);
 
     friend void swap(Cafenea &obj1, Cafenea &obj2);
 

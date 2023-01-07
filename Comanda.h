@@ -18,7 +18,7 @@ class Comanda {
 private:
     const int nrInreg;
     static int nrInregMax;
-    std::vector<Produs*> produse;
+    std::vector<std::shared_ptr<Produs>> produse;
     Data data;
     Client client;
     Angajat angajat;
@@ -26,11 +26,12 @@ private:
     stare stareComanda=PLASATA;
 public:
     Comanda();
-    Comanda(std::vector<Produs*> produse, Data &data, Client &client, Angajat &angajat);
-    Comanda(const Comanda& other);
+
+    Comanda(std::vector<std::shared_ptr<Produs>> produse, Data &data, Client &client, Angajat &angajat);
+
+    Comanda(const Comanda &other);
     Comanda& operator=(const Comanda &other);
     friend std::ostream &operator<<(std::ostream &os, const Comanda &comanda);
-
     virtual ~Comanda();
     void verificare_comanda();
 };
