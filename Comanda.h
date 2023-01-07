@@ -26,9 +26,7 @@ private:
     stare stareComanda=PLASATA;
 public:
     Comanda();
-
     Comanda(std::vector<std::shared_ptr<Produs>> produse, Data &data, Client &client, Angajat &angajat);
-
     Comanda(const Comanda &other);
     Comanda& operator=(const Comanda &other);
     friend std::ostream &operator<<(std::ostream &os, const Comanda &comanda);
