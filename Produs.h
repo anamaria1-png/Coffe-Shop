@@ -29,11 +29,11 @@ public:
 
     Produs &operator=(const Produs &other);
 
-    //[nodiscard]]double getPret() const;
+   [[nodiscard]] double getPret() const;
 
     std::string stareProdus(const Data &data);
 
-    //[[nodiscard]]const Data &getExpirare() const;
+    [[nodiscard]]const Data &getExpirare() const;
 
     virtual void incalzeste();
 

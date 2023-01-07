@@ -30,6 +30,7 @@ public:
     Comanda(const Comanda& other);
     Comanda& operator=(const Comanda &other);
     friend std::ostream &operator<<(std::ostream &os, const Comanda &comanda);
+
     virtual ~Comanda();
     void verificare_comanda();
 };

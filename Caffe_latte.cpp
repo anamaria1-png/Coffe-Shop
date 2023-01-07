@@ -31,7 +31,8 @@ void Caffe_latte::incalzeste() {
 void Caffe_latte::eliminareAlergeni() {
     if(denumire=="Produsul poate contine lactoza")
         lapte=0;
-     std::cout<<"Laptele a fost eliminat din cafea\n";
+     std::cout << "Laptele a fost eliminat din cafea\n";
+    denumire = "Produsul nu mai contine lactoza";
 }
 
 Produs *Caffe_latte::clone() const {

@@ -13,13 +13,18 @@ protected:
     std::string prenume;
     std::string oras;
     int varsta=18;
+    ~Persoana();
 public:
     Persoana();
     Persoana(std::string nume, std::string prenume, std::string oras, int varsta);
     Persoana(const Persoana &other);
-    Persoana& operator=(const Persoana &other);
+
+    Persoana &operator=(const Persoana &other);
+
+//    virtual void afisare(std::ostream &) const{
+//    }
     friend std::ostream &operator<<(std::ostream &os, const Persoana &persoana);
-    virtual ~Persoana();
+
 };
 
 

@@ -21,7 +21,7 @@ public:
     Angajat(const Angajat &other);// copiaza obiecte
     Angajat& operator=(const Angajat &other);// copiaza operatiile de tip =
     friend std::ostream &operator<<(std::ostream &os, const Angajat &angajat);// operator << de afisare
-    ~Angajat() override;
+    ~Angajat();
 };
 
 

@@ -15,6 +15,7 @@ Persoana &Persoana::operator=(const Persoana &other) = default;
 
 std::ostream &operator<<(std::ostream &os, const Persoana &persoana) {
     os << "nume: " << persoana.nume << " prenume: " << persoana.prenume << " oras: " << persoana.oras << " varsta: " << persoana.varsta;
+    //persoana.afisare(os);
     return os;
 }
 

@@ -10,18 +10,28 @@
 #include "Produs.h"
 
 class Client : public Persoana {
-    int nrProduseCumparate=3;
+    int nrProduseCumparate = 3;
     int baniCheltuiti = 400;
     const int id;
     static int next_id;
 public:
     Client();
-    Client(const std::string &nume, const std::string &prenume, const std::string &oras, int varsta, int nrProduseCumparate, int baniCheltuiti);
+
+    Client(const std::string &nume, const std::string &prenume, const std::string &oras, int varsta,
+           int nrProduseCumparate, int baniCheltuiti);
+
     Client(const Client &other);
+
     double pretProdus(const Produs &produs, const Data &data);
-    Client& operator=(const Client &other);
+
+    Client &operator=(const Client &other);
+
+    //void afisare(std::ostream &os) const override {
+    // os<< " nrProduseCumparate: " << nrProduseCumparate << " baniCheltuiti: " << baniCheltuiti
+    //  << id;}
     friend std::ostream &operator<<(std::ostream &os, const Client &client);
-    ~Client() override;
+
+    ~Client();
 };
 
 

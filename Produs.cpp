@@ -40,13 +40,13 @@ std::ostream &operator<<(std::ostream &os, const Produs &produs) {
     return os;
 }
 
-//double Produs::getPret() const {
-// return pret;
-//}
+double Produs::getPret() const {
+    return pret;
+}
 
-//const Data &Produs::getExpirare() const {
-// return expirare;
-//}
+const Data &Produs::getExpirare() const {
+    return expirare;
+}
 
 std::string Produs::stareProdus(const Data &data) {
     if (fabricatie.diferentaData(data) < 0)

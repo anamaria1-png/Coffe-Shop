@@ -48,6 +48,10 @@ std::ostream &operator<<(std::ostream &os, const Comanda &comanda) {
 }
 
 void Comanda::verificare_comanda() {
+    for (auto &produs: produse) {
+        produs->incalzeste();
+    }
+
     switch (stareComanda) {
         case PLASATA:
             break;
