@@ -23,7 +23,9 @@ public:
 
     void eliminareAlergeni() override;
 
-    [[nodiscard]]Produs *clone() const override;
+    std::shared_ptr<Produs> clone() const override;
+
+    //[[nodiscard]]Produs *clone() const override;
     void amar();
     friend std:: ostream & operator<<(std::ostream &os, const Expresso & expresso);
     ~Expresso() override;

@@ -7,27 +7,35 @@
 #include<iostream>
 #include<vector>
 #include <memory>
+#include "erori.h"
 #include "Caffe_latte.h"
 #include "Irish_coffee.h"
 #include "Expresso.h"
 
 
-
 class Cafenea {
-    std::vector<std::shared_ptr<Caffe_latte>> caffees_latte;
-    std::vector<std::shared_ptr<Irish_coffee>> irish_coffees;
-    std::vector<std::shared_ptr<Expresso>>expressos;
-    std:: vector<Produs*>produse;
+    //std::vector<std::shared_ptr<Caffe_latte>> caffees_latte;
+    //std::vector<std::shared_ptr<Irish_coffee>> irish_coffees;
+    //std::vector<std::shared_ptr<Expresso>>expressos;
+
+    std::vector<std::shared_ptr<Produs>> produse;
 
 public:
     Cafenea();
-    Cafenea& operator=(const Cafenea &obj);
-    Cafenea(const Cafenea& other);
-    void dynamiccast(Produs*);
-    friend void swap(Cafenea& obj1, Cafenea& obj2);
+
+    Cafenea &operator=(const Cafenea &obj);
+
+    Cafenea(const Cafenea &other);
+
+    void servire_speciala(Produs *tempProdus);
+
+    void insert(Produs &prod);
+
+    Produs &search(std::string text);
+
+    friend void swap(Cafenea &obj1, Cafenea &obj2);
+
     virtual ~Cafenea();
-
-
 };
 
 

@@ -22,10 +22,11 @@ public:
     Irish_coffee& operator=(const Irish_coffee &other);
 
     void incalzeste() override;
-
     void eliminareAlergeni() override;
 
-    [[nodiscard]]Produs *clone() const override;
+    std::shared_ptr<Produs> clone() const override;
+
+    //[[nodiscard]]Produs *clone() const override;
     void alcool();
     friend std::ostream &operator<<(std::ostream &os, const Irish_coffee &coffee);
     ~Irish_coffee() override;

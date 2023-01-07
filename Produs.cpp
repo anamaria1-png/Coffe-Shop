@@ -64,7 +64,10 @@ void Produs::incalzeste() {
 void Produs::eliminareAlergeni() {
     if (temperatura > 27)cafeina = 0;
     std::cout << "Cafeina eliminata din produs\n";
+}
 
+const std::string &Produs::getDenumire() const {
+    return denumire;
 }
 
 Produs::~Produs() = default;

@@ -7,7 +7,20 @@
 
 Angajat::Angajat()=default;
 
-Angajat::Angajat(const std::string &nume, const std::string &prenume, const std::string &oras, int varsta, double salariu, bool lucreazaInWeekend, bool lucreazaPartTime, int oraStartProgram) : Persoana(nume, prenume, oras, varsta), salariu(salariu), lucreazaInWeekend(lucreazaInWeekend), lucreazaPartTime(lucreazaPartTime), oraStartProgram(oraStartProgram) {}
+Angajat::Angajat(const std::string &nume, const std::string &prenume, const std::string &oras, int varsta,
+                 double salariu, bool lucreazaInWeekend, bool lucreazaPartTime, int oraStartProgram) : Persoana(nume,
+                                                                                                                prenume,
+                                                                                                                oras,
+                                                                                                                varsta),
+                                                                                                       salariu(salariu),
+                                                                                                       lucreazaInWeekend(
+                                                                                                               lucreazaInWeekend),
+                                                                                                       lucreazaPartTime(
+                                                                                                               lucreazaPartTime),
+                                                                                                       oraStartProgram(
+                                                                                                               oraStartProgram) {
+    next_nr_angajat++;
+}
 
 Angajat::Angajat(const Angajat &other) : Persoana(other) {
     salariu = other.salariu;

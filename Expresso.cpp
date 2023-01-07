@@ -41,8 +41,8 @@ void Expresso::amar() {
     std::cout << denumire;
 }
 
-Produs *Expresso::clone() const {
-    return new Expresso(*this);
+std::shared_ptr<Produs> Expresso::clone() const {
+    return std::make_shared<Expresso>(*this);
 }
 
 void Expresso::eliminareAlergeni() {

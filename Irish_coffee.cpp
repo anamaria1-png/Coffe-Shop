@@ -41,8 +41,10 @@ Irish_coffee::Irish_coffee(const Irish_coffee &other): Produs(other) {
 }
 
 void Irish_coffee::incalzeste() {
-    if(temperatura <15)std::cout<<"Irish coffee-ul este ice\n";
-    else std::cout<<"Irish coffee cald\n";
+    if (temperatura < 15) {
+        temperatura = temperatura * 2;
+        std::cout << "Irish coffee cald\n";
+    } else std::cout << "Irish coffee inca necesita incalzire\n";
 }
 
 void Irish_coffee::alcool() {
@@ -52,8 +54,8 @@ void Irish_coffee::alcool() {
     }
 }
 
-Produs *Irish_coffee::clone() const {
-    return new Irish_coffee(*this);
+std::shared_ptr<Produs> Irish_coffee::clone() const {
+    return std::make_shared<Irish_coffee>(*this);
 }
 
 void Irish_coffee::eliminareAlergeni() {

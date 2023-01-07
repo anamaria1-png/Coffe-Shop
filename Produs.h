@@ -8,7 +8,7 @@
 #include<string>
 #include<vector>
 #include"Data.h"
-
+#include<memory>
 
 class Produs {
 protected:
@@ -29,18 +29,24 @@ public:
 
     Produs &operator=(const Produs &other);
 
-   [[nodiscard]] double getPret() const;
+    [[nodiscard]] double getPret() const;
 
     std::string stareProdus(const Data &data);
 
     [[nodiscard]]const Data &getExpirare() const;
 
+    const std::string &getDenumire() const;
+
     virtual void incalzeste();
 
-    [[nodiscard]]virtual Produs *clone() const = 0;
+    virtual std::shared_ptr<Produs> clone() const = 0;
+
+    //[[nodiscard]]virtual Produs *clone() const = 0;
 
     friend std::ostream &operator<<(std::ostream &os, const Produs &produs);
+
     virtual ~Produs();
+
     virtual void eliminareAlergeni();
 };
 

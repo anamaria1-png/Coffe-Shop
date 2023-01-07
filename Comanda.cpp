@@ -38,10 +38,10 @@ Comanda &Comanda::operator=(const Comanda &other) {
 }
 
 std::ostream &operator<<(std::ostream &os, const Comanda &comanda) {
-    os<<"nrInreg: "<<comanda.nrInreg;
+    os << "nrInreg: " << comanda.nrInreg << " ";
     os << "produse: ";
-    for (const auto &it: comanda.produse) {
-        os << it << " ";
+    for (const auto it: comanda.produse) {
+        os << *it << " ";
     }
     os << "data: " << comanda.data << " client: " << comanda.client << " angajat: " << comanda.angajat;
     return os;

@@ -29,14 +29,14 @@ void Caffe_latte::incalzeste() {
 }
 
 void Caffe_latte::eliminareAlergeni() {
-    if(denumire=="Produsul poate contine lactoza")
-        lapte=0;
+    if (denumire.contains("Produsul poate contine lactoza"))
+        lapte = 0;
      std::cout << "Laptele a fost eliminat din cafea\n";
     denumire = "Produsul nu mai contine lactoza";
 }
 
-Produs *Caffe_latte::clone() const {
-    return new Caffe_latte(*this);
+std::shared_ptr<Produs> Caffe_latte::clone() const {
+    return std::make_shared<Caffe_latte>(*this);
 }
 
 Caffe_latte::~Caffe_latte()=default;

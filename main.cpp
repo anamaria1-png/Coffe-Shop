@@ -32,25 +32,20 @@ int main() {
     std::cout << irish.stareProdus(an) << '\n';
     std::cout << client.pretProdus(irish, an) << '\n';
     std::cout << an.diferentaData(f) << '\n';
-
     irish.alcool();
     expresso.amar();
     cl.eliminareAlergeni();
     comanda.verificare_comanda();
-    Comanda c1=comanda;
+    Comanda c1 = comanda;
+    std::cout << c1;
     c1.verificare_comanda();
-    int x = 0;
-    std::cin >> x;
     Cafenea servire;
-    Produs *tempProdus;
-    if (x == 1)
-        tempProdus = new Expresso;
-    else if (x == 2)
-        tempProdus = new Irish_coffee;
-    else
-        tempProdus = new Caffe_latte;
     try {
-        servire.dynamiccast(tempProdus);
+        servire.insert(irish);
+        auto &prod = servire.search("Lapte");
+        servire.servire_speciala(&prod);
+        prod = servire.search("Cafea");
+        std::cout << prod;
     }
     catch (eroare_comanda &e) { std::cout << e.what(); }
     return 0;
