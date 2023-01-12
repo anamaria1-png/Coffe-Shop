@@ -23,7 +23,6 @@ Expresso &Expresso::operator=(const Expresso &other) {
 }
 
 Expresso::Expresso(const Expresso &other) : Produs(other), aroma(other.aroma) {
-    aroma = other.aroma;
 
 }
 
