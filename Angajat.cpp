@@ -41,6 +41,7 @@ Angajat::Angajat(const Angajat &other) : Persoana(other), nr_angajat(next_nr_ang
 }
 
 Angajat &Angajat::operator=(const Angajat &other) {
+
     salariu = other.salariu;
     lucreazaInWeekend = other.lucreazaInWeekend;
     lucreazaPartTime = other.lucreazaPartTime;

@@ -25,7 +25,7 @@ Comanda::Comanda(std::vector<std::shared_ptr<Produs>> produse, Data &data, Clien
 
 Comanda::Comanda(const Comanda &other) : nrInreg(nrInregMax), data(other.data), client(other.client),
                                          angajat(other.angajat) {
-    for (auto &produs: other.produse)
+    for (const auto &produs: other.produse)
         produse.push_back(produs->clone());
 }
 

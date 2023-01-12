@@ -22,7 +22,7 @@ Expresso &Expresso::operator=(const Expresso &other) {
     return *this;
 }
 
-Expresso::Expresso(const Expresso &other) : Produs(other) {
+Expresso::Expresso(const Expresso &other) : Produs(other), aroma(other.aroma) {
     aroma = other.aroma;
 
 }

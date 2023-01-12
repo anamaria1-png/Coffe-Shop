@@ -14,7 +14,7 @@ private:
     bool lucreazaInWeekend=false;
     bool lucreazaPartTime=true;
     int oraStartProgram = 8;
-    int nr_angajat;
+    const int nr_angajat;
     static int next_nr_angajat;
 public:
     Angajat();// reda un obiect gol

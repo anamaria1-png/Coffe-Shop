@@ -12,7 +12,7 @@ Cafenea &Cafenea::operator=(const Cafenea&obj) {
 }
 
 Cafenea::Cafenea(const Cafenea &other) {
-   for(auto &produs:other.produse)
+   for (const auto &produs: other.produse)
        produse.push_back(produs->clone());
 }
 
