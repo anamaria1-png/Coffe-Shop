@@ -48,3 +48,12 @@ Produs &Cafenea::search(std::string const &text) {
     throw eroare_comanda{};
 }
 
+Cafenea *Cafenea::instanta = nullptr;
+
+Cafenea *Cafenea::getInstanta() {
+    if (instanta == nullptr) {
+        instanta = new Cafenea();
+    }
+    return instanta;
+}
+

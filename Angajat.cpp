@@ -4,7 +4,72 @@
 
 #include "Angajat.h"
 
-int Angajat::next_nr_angajat = 0;
+template<typename T>
+Angajat<T>::Angajat(const Angajat &other) : Persoana(other) {
+    salariu = other.salariu;
+    lucreazaInWeekend = other.lucreazaInWeekend;
+    lucreazaPartTime = other.lucreazaPartTime;
+    oraStartProgram = other.oraStartProgram;
+    templateAtribut = other.templateAtribut;
+}
+
+template<typename T>
+Angajat<T> &Angajat<T>::operator=(const Angajat &other) {
+    salariu = other.salariu;
+    lucreazaInWeekend = other.lucreazaInWeekend;
+    lucreazaPartTime = other.lucreazaPartTime;
+    oraStartProgram = other.oraStartProgram;
+    nume = other.nume;
+    prenume = other.prenume;
+    oras = other.oras;
+    varsta = other.varsta;
+    return *this;
+}
+
+template<typename T>
+std::ostream &operator<<(std::ostream &os, const Angajat<T> &angajat) {
+    os << static_cast<const Persoana &>(angajat) << " salariu: " << angajat.salariu << " lucreazaInWeekend: "
+       << angajat.lucreazaInWeekend << " lucreazaPartTime: " << angajat.lucreazaPartTime << " oraStartProgram: "
+       << angajat.oraStartProgram << " templateAtribut: " << angajat.templateAtribut;
+    os << angajat.nr_angajat;
+    return os;
+}
+
+
+template<typename T>
+T Angajat<T>::getTemplateAtribut() const {
+    return templateAtribut;
+}
+
+
+template<typename T>
+Angajat<T> *
+Angajat<T>::createAngajat(const std::string &nume, const std::string &prenume, const std::string &oras, int varsta,
+                          double salariu, bool lucreazaInWeekend, bool lucreazaPartTime, int oraStartProgram,
+                          T templateAttribute) {
+    return new Angajat<T>(nume, prenume, oras, varsta, salariu, lucreazaInWeekend, lucreazaPartTime, oraStartProgram,
+                          templateAttribute);
+}
+
+template<typename T>
+void Angajat<T>::printTemplateAtribut() {
+    std::cout << "Template attribute: " << templateAtribut << std::endl;
+}
+
+template<typename T>
+T sum(T a, T b) {
+    return a + b;
+}
+
+template<typename T>
+class Angajat;
+
+template<typename T>
+void printSum(const Angajat<T> &a, const Angajat<T> &b) {
+    std::cout << "Sum of template attributes: " << sum(a.getTemplateAtribut(), b.getTemplateAtribut()) << std::endl;
+}
+
+/*int Angajat::next_nr_angajat = 0;
 
 Angajat::Angajat() : nr_angajat(next_nr_angajat) {
 
@@ -62,3 +127,4 @@ std::ostream &operator<<(std::ostream &os, const Angajat &angajat) {
 }
 
 Angajat::~Angajat() = default;
+*/

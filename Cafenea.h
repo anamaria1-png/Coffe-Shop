@@ -18,9 +18,12 @@ class Cafenea {
     //std::vector<std::shared_ptr<Irish_coffee>> irish_coffees;
     //std::vector<std::shared_ptr<Expresso>>expressos
     std::vector<std::shared_ptr<Produs>> produse;
+    static Cafenea *instanta;
 
 public:
     Cafenea();
+
+    static Cafenea *getInstanta();
 
     Cafenea &operator=(const Cafenea &obj);
 

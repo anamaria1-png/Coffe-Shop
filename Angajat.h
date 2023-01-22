@@ -8,7 +8,38 @@
 #include <ostream>
 #include "Persoana.h"
 
+template<typename T>
 class Angajat : public Persoana {
+private:
+    double salariu;
+    bool lucreazaInWeekend;
+    bool lucreazaPartTime;
+    int oraStartProgram;
+    T templateAtribut;
+
+public:
+    static Angajat<T> *
+    createAngajat(const std::string &nume, const std::string &prenume, const std::string &oras, int varsta,
+                  double salariu, bool lucreazaInWeekend, bool lucreazaPartTime, int oraStartProgram,
+                  T templateAttribute);
+
+    Angajat(const Angajat &other);
+
+    Angajat &operator=(const Angajat &other);
+
+    void printTemplateAtribut();
+
+    T getTemplateAtribut() const;
+
+    friend std::ostream &operator<<(std::ostream &os, const Angajat &angajat);
+
+    ~Angajat() = default;
+};
+
+
+
+
+/*class Angajat : public Persoana {
 private:
     double salariu=2000;
     bool lucreazaInWeekend=false;
@@ -23,7 +54,7 @@ public:
     Angajat& operator=(const Angajat &other);// copiaza operatiile de tip =
     friend std::ostream &operator<<(std::ostream &os, const Angajat &angajat);// operator << de afisare
     ~Angajat();
-};
+};*/
 
 
 #endif //OOP_ANGAJAT_H

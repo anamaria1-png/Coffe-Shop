@@ -39,14 +39,23 @@ int main() {
     Comanda c1 = comanda;
     std::cout << c1;
     c1.verificare_comanda();
-    Cafenea servire;
+    Cafenea *servire = Cafenea::getInstanta();
+
+
     try {
-        servire.insert(irish);
-        auto &prod = servire.search("Lapte");
+        servire->insert(irish);
+        auto &prod = servire->search("Lapte");
         Cafenea::servire_speciala(&prod);
-        prod = servire.search("Cafea");
+        prod = servire->search("Cafea");
         std::cout << prod;
     }
     catch (eroare_comanda &e) { std::cout << e.what(); }
+    Angajat<int> a = Angajat<int>::createAngajat("John", "Doe", "New York", 25, 3000, true, false, 9, 5);
+    Angajat<int> b = a = Angajat<int>::createAngajat("Jane", "Doe", "Los Angeles", 30, 3500, false, true, 10, 10);
+    a.printTemplateAtribut();
+
+    std::cout << a << std::endl;
+    std::cout << b << std::endl;
+    printSum(a, b);
     return 0;
 }
