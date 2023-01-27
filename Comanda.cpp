@@ -10,8 +10,8 @@
 int Comanda::nrInregMax=0;
 
 /*Comanda::Comanda() : nrInreg(nrInregMax), data(), client(), angajat() {
-    nrInregMax++;
-}*/
+    nrInregMax++;*/
+
 
 Comanda::Comanda(std::vector<std::shared_ptr<Produs>> produse, Data &data, Client &client, Angajat<int> &angajat)
         : nrInreg(
