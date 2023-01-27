@@ -9,29 +9,38 @@
 #include "Persoana.h"
 
 template<typename T>
+class Angajat;
+
+template<typename T>
+std::ostream &operator<<(std::ostream &os, const Angajat<T> &angajat);
+
+template<typename T>
 class Angajat : public Persoana {
 private:
     double salariu;
     bool lucreazaInWeekend;
     bool lucreazaPartTime;
     int oraStartProgram;
-    T templateAtribut;
+    T identificator;
 
 public:
     static Angajat<T> *
     createAngajat(const std::string &nume, const std::string &prenume, const std::string &oras, int varsta,
                   double salariu, bool lucreazaInWeekend, bool lucreazaPartTime, int oraStartProgram,
-                  T templateAttribute);
+                  T identificator);
 
-    Angajat(const Angajat &other);
+    Angajat(const std::string &nume, const std::string &prenume, const std::string &oras, int varsta, double salariu,
+            bool lucreazaInWeekend, bool lucreazaPartTime, int oraStartProgram, T identificator);
 
-    Angajat &operator=(const Angajat &other);
+    Angajat(const Angajat<T> &other);
 
-    void printTemplateAtribut();
+    Angajat<T> &operator=(const Angajat<T> &other);
 
-    T getTemplateAtribut() const;
+    void printidentificator();
 
-    friend std::ostream &operator<<(std::ostream &os, const Angajat &angajat);
+    void sum(const Angajat<T> &b);
+
+    friend std::ostream &operator<<<>(std::ostream &os, const Angajat<T> &angajat);
 
     ~Angajat() = default;
 };
@@ -56,5 +65,5 @@ public:
     ~Angajat();
 };*/
 
-
+#include "Angajat.cpp"
 #endif //OOP_ANGAJAT_H

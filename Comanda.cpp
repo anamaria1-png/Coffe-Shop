@@ -9,17 +9,18 @@
 
 int Comanda::nrInregMax=0;
 
-Comanda::Comanda() : nrInreg(nrInregMax), data(), client(), angajat() {
+/*Comanda::Comanda() : nrInreg(nrInregMax), data(), client(), angajat() {
     nrInregMax++;
-}
+}*/
 
-Comanda::Comanda(std::vector<std::shared_ptr<Produs>> produse, Data &data, Client &client, Angajat &angajat) : nrInreg(
+Comanda::Comanda(std::vector<std::shared_ptr<Produs>> produse, Data &data, Client &client, Angajat<int> &angajat)
+        : nrInreg(
         nrInregMax),
-                                                                                                               produse(std::move(
-                                                                                                                       produse)),
-                                                                                                               data(data),
-                                                                                                               client(client),
-                                                                                                               angajat(angajat) {
+          produse(std::move(
+                  produse)),
+          data(data),
+          client(client),
+          angajat(angajat) {
     nrInregMax++;
 }
 

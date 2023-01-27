@@ -21,16 +21,23 @@ private:
     std::vector<std::shared_ptr<Produs>> produse;
     Data data;
     Client client;
-    Angajat angajat;
-    enum stare{PLASATA, ANULATA, INTARZIATA};
-    stare stareComanda=PLASATA;
+    Angajat<int> angajat;
+    enum stare {
+        PLASATA, ANULATA, INTARZIATA
+    };
+    stare stareComanda = PLASATA;
 public:
-    Comanda();
-    Comanda(std::vector<std::shared_ptr<Produs>> produse, Data &data, Client &client, Angajat &angajat);
+    //Comanda();
+    Comanda(std::vector<std::shared_ptr<Produs>> produse, Data &data, Client &client, Angajat<int> &angajat);
+
     Comanda(const Comanda &other);
-    Comanda& operator=(const Comanda &other);
+
+    Comanda &operator=(const Comanda &other);
+
     friend std::ostream &operator<<(std::ostream &os, const Comanda &comanda);
+
     virtual ~Comanda();
+
     void verificare_comanda();
 };
 
